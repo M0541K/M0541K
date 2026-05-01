@@ -18,6 +18,20 @@ body {
   background: var(--bg);
   color: var(--text);
   padding: 28px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.page-leave {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 a {
@@ -71,13 +85,11 @@ a:hover {
   column-gap: 32px;
   font-size: 72px;
   margin: 0 0 18px;
-  letter-spacing: 0.04em;
 }
 
 .state-symbol {
   text-align: center;
   display: inline-block;
-  color: #ffffff;
 }
 
 .state-name {
@@ -96,7 +108,6 @@ a:hover {
 .syntax {
   color: var(--muted);
   font-size: 22px;
-  letter-spacing: 0.06em;
   margin-bottom: 34px;
 }
 
@@ -108,7 +119,6 @@ a:hover {
 .hex {
   margin-top: 8px;
   font-size: 14px;
-  letter-spacing: 0.14em;
 }
 
 .desc {
@@ -122,23 +132,18 @@ a:hover {
   font-size: 28px;
   line-height: 1.35;
   margin-bottom: 36px;
-  min-height: 110px; /* verhindert Springen */
+  min-height: 110px;
 }
 
 .statement span {
   color: var(--focus);
 }
 
-/* ========================= */
-/* GRID (OSAI STABIL) */
-/* ========================= */
-
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, minmax(150px, auto));
   gap: 18px;
-  align-items: stretch;
 }
 
 .card {
@@ -150,20 +155,17 @@ a:hover {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .card-label {
   color: var(--focus);
   font-size: 11px;
-  letter-spacing: 0.16em;
   margin-bottom: 12px;
 }
 
 .card p {
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.55;
 }
 
 /* FOOTER */
@@ -171,91 +173,21 @@ a:hover {
   margin-top: 42px;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.6;
 }
 
 /* ========================= */
-/* VOID HIGH-END */
+/* VOID */
 /* ========================= */
 
 body.void-page {
   background: #000000;
 }
 
-/* ==VOID === langsamer Aufbau== */
-/* → weil kein Zustand existiert */
-/* =→ erst muss etwas entstehen= */
-body.void-page.page-loaded {
-  transition-duration: 1.2s;
-}
-
-/* ========================= */
-/* STATE TRANSITIONS (OSAI) */
-/* ========================= */
-
-/* ===== VOID → alles entsteht ===== */
-body.from-void {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-body.page-loaded.from-void {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-
-/* ===== FLOW → Bewegung bleibt ===== */
-body.from-flow {
-  transform: translateX(-10px);
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-
-body.page-loaded.from-flow {
-  transform: translateX(0);
-}
-
-
-/* ===== META → instabil / unscharf ===== */
-body.from-meta {
-  filter: blur(2px);
-  transition: filter 0.6s ease, opacity 0.6s ease;
-}
-
-body.page-loaded.from-meta {
-  filter: blur(0);
-}
-
-
-/* ===== LINK → Verbindung zieht ===== */
-body.from-link {
-  transform: scale(0.98);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-body.page-loaded.from-link {
-  transform: scale(1);
-}
-
-
-/* ===== LIVE → direkt präsent ===== */
-body.from-live {
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-body.page-loaded.from-live {
-  opacity: 1;
-}
-
 .hero.void {
   background: transparent;
   border: none;
-  box-shadow: none;
 }
 
-/* nur Content bewegt sich */
 .void-content {
   opacity: 0;
   transform: translateY(14px);
@@ -269,367 +201,206 @@ body.page-loaded.from-live {
   }
 }
 
-/* reduzierte Wahrnehmung */
-.void {
-  color: #ffffff;
-}
-
 .void .state-nav,
 .void .kicker {
   opacity: 0.3;
 }
 
-/* VOID überschreibt gesammelt */
 .void .statement,
 .void .hex,
 .void .desc,
 .void .syntax strong {
-  color: #888888;
+  color: #888;
 }
 
 .void .statement span {
-  color: #cccccc;
+  color: #ccc;
 }
 
-/* Tiefe */
-body.void-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0) 0%,
-    rgba(0,0,0,0.6) 100%
-  );
-}
-
-/* ===== SYMBOL ANIMATION für GENESIS ===== */
-
-/* ===== GENESIS LOGO ===== */
+/* ========================= */
+/* SYMBOL ANIMATION */
+/* ========================= */
 
 .genesis-symbol {
-  display: inline-block;
-  transform-origin: center;
-  animation: genesisPulse 3.2s ease-in-out infinite;
+  animation: genesisPulse 3s ease-in-out infinite;
 }
 
-/* Kern bleibt stabil, Aura bewegt sich */
-/* etwas entsteht */
-/* aber bleibt stabil */
 @keyframes genesisPulse {
-
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.85;
-    filter: blur(0px);
-  }
-
   50% {
     transform: scale(1.1);
-    opacity: 1;
-    filter: blur(0.4px);
   }
 }
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media (max-width: 760px) {
-
-  .hero {
-    padding: 28px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .state-title {
-    grid-template-columns: 80px 1fr;
-    font-size: 48px;
-  }
-
-  .statement {
-    font-size: 22px;
-  }
-}
-
-/* ===== FLOW LOGO ===== */
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media (max-width: 760px) {
-
-  .hero {
-    padding: 28px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .state-title {
-    grid-template-columns: 80px 1fr;
-    font-size: 48px;
-  }
-
-  .statement {
-    font-size: 22px;
-  }
-}
-
-/* ========================= */
-/* ===== FLOW LOGO ===== */
-/* ========================= */
 
 .flow-symbol {
-  display: inline-block;
-  transform-origin: center;
-  animation: flowDrift 6s ease-in-out infinite,
-             flowNoise 2.5s linear infinite;
+  animation: flowDrift 6s ease-in-out infinite;
 }
 
 @keyframes flowDrift {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-    opacity: 0.9;
-  }
-
-  25% {
-    transform: translate(2px, -3px) scale(1.03);
-  }
-
   50% {
-    transform: translate(-3px, 2px) scale(1.05);
-    opacity: 1;
-  }
-
-  75% {
-    transform: translate(2px, 3px) scale(1.02);
+    transform: translate(-3px, 2px);
   }
 }
 
-/* 0% / 100% = Zustand, 54% = Fokuspunkt */
-@keyframes flowNoise {
-  0%, 100% {
-    filter: blur(0.2px);
-  }
-
-  54% {
-    filter: blur(0.5px);
-  }
+.live-symbol {
+  animation: livePulse 2s ease-in-out infinite;
 }
 
-/* ========================= */
-/* ===== META LOGO ===== */
-/* ========================= */
+@keyframes livePulse {
+  50% {
+    transform: scale(1.06);
+  }
+}
 
 .meta-symbol {
-  display: inline-block;
-  position: relative;
-  transform-origin: center;
   animation: metaDrift 5s ease-in-out infinite;
 }
 
 @keyframes metaDrift {
-  0%, 100% {
-    transform: translate(0px, 0px);
-  }
-
   50% {
     transform: translate(1px, -1px);
   }
 }
 
-.meta-symbol::before,
-.meta-symbol::after {
-  content: attr(data-symbol);
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.meta-symbol::before {
-  color: #00FFFF;
-  transform: translate(1px, 0);
-  animation: metaGlitch 3.2s infinite;
-}
-
-.meta-symbol::after {
-  color: #ff00aa;
-  transform: translate(-1px, 0);
-  animation: metaGlitch 3.2s infinite reverse;
-}
-
-@keyframes metaGlitch {
-  0%, 92%, 100% {
-    opacity: 0;
-  }
-
-  93% {
-    opacity: 0.6;
-  }
-
-  94% {
-    opacity: 0;
-  }
-
-  95% {
-    opacity: 0.4;
-  }
-
-  96% {
-    opacity: 0;
-  }
-}
-
-/* ========================= */
-/* ===== LINK  LOGO ===== */
-/* ========================= */
-
 .link-symbol {
-  display: inline-block;
-  transform-origin: center;
-  animation: linkConnect 3.5s ease-in-out infinite,
-             linkPulse 2s ease-in-out infinite;
-}
-
-@keyframes linkConnect {
-  0%, 100% {
-    transform: scaleX(1);
-    opacity: 0.85;
-  }
-
-  50% {
-    transform: scaleX(1.15);
-    opacity: 1;
-  }
+  animation: linkPulse 2s ease-in-out infinite;
 }
 
 @keyframes linkPulse {
-  0%, 100% {
-    filter: brightness(1);
-  }
-
   50% {
     filter: brightness(1.3);
   }
 }
 
 /* ========================= */
-/* ===== LIVE LOGO ===== */
+/* STATE TRANSITIONS */
 /* ========================= */
 
-.live-symbol {
-  display: inline-block;
-  transform-origin: center;
-  animation: livePulse 2.2s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-  0%, 100% {
-    transform: scale(1);
-    text-shadow: 0 0 0px rgba(0,255,200,0);
-  }
-
-  50% {
-    transform: scale(1.06);
-    text-shadow: 0 0 18px rgba(0,255,200,0.45);
-  }
-
-/* ========================= */
-/* PAGE TRANSITIONS */
-/* ========================= */
-
-/* Startzustand */
-body {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* sichtbar */
-body.page-loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* beim Verlassen */
-body.page-leave {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-/* ========================= */
-/* PRECISION TRANSITIONS */
-/* ========================= */
-
-/* VOID → GENESIS: aus Nichts entsteht Impuls */
-body.from-void.to-genesis {
-  opacity: 0;
-  transform: scale(0.96) translateY(24px);
-}
-
-body.page-loaded.from-void.to-genesis {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-  transition: opacity 1.4s ease, transform 1.4s ease;
-}
-
-
-/* VOID → andere Seiten: langsamer Aufbau */
-body.from-void:not(.to-genesis) {
-  opacity: 0;
+body.from-void {
   transform: translateY(20px);
+  opacity: 0;
 }
 
-body.page-loaded.from-void:not(.to-genesis) {
-  opacity: 1;
+body.page-loaded.from-void {
   transform: translateY(0);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-
-/* FLOW → LINK: Bewegung wird Verbindung */
-body.from-flow.to-link {
-  opacity: 0.8;
-  transform: translateX(-18px) scaleX(0.98);
-}
-
-body.page-loaded.from-flow.to-link {
   opacity: 1;
-  transform: translateX(0) scaleX(1);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-
-/* META → CORE: Instabilität wird Struktur */
-body.from-meta.to-core {
-  filter: blur(3px);
-  transform: scale(1.01);
+body.from-flow {
+  transform: translateX(-10px);
 }
 
-body.page-loaded.from-meta.to-core {
+body.page-loaded.from-flow {
+  transform: translateX(0);
+}
+
+body.from-meta {
+  filter: blur(2px);
+}
+
+body.page-loaded.from-meta {
   filter: blur(0);
-  transform: scale(1);
-  transition: filter 0.7s ease, transform 0.7s ease;
 }
 
-
-/* LINK → LIVE: Verbindung wird aktiv */
-body.from-link.to-live {
-  opacity: 0.75;
+body.from-link {
   transform: scale(0.98);
 }
 
-body.page-loaded.from-link.to-live {
-  opacity: 1;
+body.page-loaded.from-link {
   transform: scale(1);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+body.from-live {
+  opacity: 0.7;
+}
+
+body.page-loaded.from-live {
+  opacity: 1;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 760px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .state-title {
+    font-size: 48px;
+  }
+
+  .statement {
+    font-size: 22px;
+  }
+
+  /* ========================= */
+/* INDEX BOOT INTRO */
+/* ========================= */
+
+body.index-page.intro-boot {
+  background: #000541;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  transition:
+    background 1.2s ease,
+    align-items 1.2s ease,
+    justify-content 1.2s ease;
+}
+
+/* Rohzustand: C64 / Terminal */
+body.index-page.intro-boot .container {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition:
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+body.index-page.intro-boot h1,
+body.index-page.intro-boot .subtitle,
+body.index-page.intro-boot .flow,
+body.index-page.intro-boot p,
+body.index-page.intro-boot .button,
+body.index-page.intro-boot .footer {
+  color: #ffffff;
+  opacity: 0.95;
+  transition:
+    color 1.2s ease,
+    opacity 1.2s ease,
+    border-color 1.2s ease,
+    background 1.2s ease,
+    transform 1.2s ease;
+}
+
+/* Ordnung entsteht */
+body.index-page.intro-arrange {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+body.index-page.intro-arrange .container {
+  transform: translateY(0);
+}
+
+/* Farben kommen zurück */
+body.index-page.intro-color {
+  background: radial-gradient(circle at center, #02063A 0%, #000541 70%);
+}
+
+body.index-page.intro-color .subtitle,
+body.index-page.intro-color p,
+body.index-page.intro-color .footer {
+  color: var(--muted);
+}
+
+body.index-page.intro-color .flow,
+body.index-page.intro-color .flow a,
+body.index-page.intro-color .button {
+  color: var(--index-focus);
+  border-color: var(--index-focus);
+}
+  
