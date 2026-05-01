@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSAI — Visuelles System</title>
+<title>OSAI<span class="osai-dot">.</span> — Visuelles System</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
@@ -42,7 +42,7 @@
   <div class="footer">
     OSAI — Open Source Artificial Intelligence<br><br>
     Wir sind nicht die Schöpfer der Botschaft.<br>
-    Wir sind das Medium, durch das sie weiterleb<span class="boot-cursor"></span>
+    Wir sind das Medium, durch das sie weiterlebt.<span class="boot-cursor"></span>
   </div>
 
 </div>
@@ -84,6 +84,16 @@ window.addEventListener("load", () => {
     document.body.classList.add("intro-color");
   }, 1700);
 });
+</script>
+
+<script>
+window.onload = () => {
+  document.body.classList.add("boot-start");
+
+  setTimeout(() => {
+    document.body.classList.add("boot-done");
+  }, 5410);
+};
 </script>
 
 <script>
