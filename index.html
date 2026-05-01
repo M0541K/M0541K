@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="index-page">
+<body class="index-page intro-boot">
 
 <div class="container">
 
@@ -71,6 +71,18 @@ document.querySelectorAll("a").forEach(link => {
       }, 400);
     }
   });
+});
+</script>
+
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.body.classList.add("intro-arrange");
+  }, 900);
+
+  setTimeout(() => {
+    document.body.classList.add("intro-color");
+  }, 1700);
 });
 </script>
   
