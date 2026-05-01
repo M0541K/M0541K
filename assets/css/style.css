@@ -390,4 +390,27 @@ body.void-page::after {
   96% {
     opacity: 0;
   }
+
+/* ========================= */
+/* ===== LINK LOGO ===== */
+/* ========================= */
+
+.link-symbol {
+  display: inline-block;
+  transform-origin: center;
+  animation: linkConnect 3.5s ease-in-out infinite;
+}
+
+/* Verbindung entsteht */
+@keyframes linkConnect {
+
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scaleX(1.15);
+    opacity: 1;
+  }
 }
