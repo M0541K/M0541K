@@ -1,43 +1,79 @@
-<style>
-:root {
-  --focus: #C0C4CC;
+/* ========================= */
+/* ===== VOID HIGH-END ===== */
+/* ========================= */
+
+/* echter Nullraum */
+body.void-page {
+  background: #000000;
 }
 
-<body class="void-page">
-
+/* Container verschwindet */
 .hero.void {
-  background: rgba(0, 5, 65, 0.18);
-  border-color: rgba(192,196,204,0.14);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  opacity: 0;
+  transform: translateY(14px);
+  animation: voidFade 2.2s ease forwards;
 }
 
+/* sanfter Aufbau */
+@keyframes voidFade {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
+
+/* gesamter Bereich wirkt „fern“ */
 .void {
-  color: #ffffff;           /* Haupttext sichtbar */
-}
-
-.state-nav,
-.kicker {
-  opacity: 0.3;
-}
-  
-.syntax,
-.hex,
-.desc {
-  color: #888888;           /* dezente Infos sichtbar */
-}
-
-.state-title {
   color: #ffffff;
-}
-  
-.void {
   opacity: 0.85;
 }
 
-.void .statement {
-  max-width: 760px;
+/* Navigation = fast nicht da */
+.void .state-nav,
+.void .kicker {
+  opacity: 0.15;
 }
 
-.void .statement span {
-  color: var(--text);
+/* Infos nur angedeutet */
+.void .syntax,
+.void .hex,
+.void .desc {
+  color: #666666;
 }
-</style>
+
+/* Fokus bleibt lesbar */
+.void .statement span {
+  color: #ffffff;
+}
+
+/* ultra subtle vignette (Tiefe) */
+body.void-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 100%
+  );
+}
+
+/* ganz leichtes Film-Grain (High-End Look) */
+body.void-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
