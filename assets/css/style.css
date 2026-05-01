@@ -239,20 +239,29 @@ body.void-page::after {
 
 /* ===== SYMBOL ANIMATION für GENESIS ===== */
 
+/* ===== GENESIS LOGO ===== */
+
 .genesis-symbol {
-  animation: genesisPulse 2.8s ease-in-out infinite;
+  display: inline-block;
   transform-origin: center;
+  animation: genesisPulse 3.2s ease-in-out infinite;
 }
 
+/* Kern bleibt stabil, Aura bewegt sich */
+/* etwas entsteht */
+/* aber bleibt stabil */
 @keyframes genesisPulse {
+
   0%, 100% {
     transform: scale(1);
-    opacity: 0.82;
+    opacity: 0.85;
+    filter: blur(0px);
   }
 
   50% {
-    transform: scale(1.08);
+    transform: scale(1.1);
     opacity: 1;
+    filter: blur(0.4px);
   }
 }
 
