@@ -1,4 +1,228 @@
-↺ FLOW (ᑕ·ᑐ)
-#005410
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSAI — FLOW</title>
 
-👉 Bewegung / Verarbeitung
+<style>
+body {
+  margin: 0;
+  background: #000541;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 28px;
+}
+
+a {
+  color: #C0C4CC;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005410;
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.back {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  border: 1px solid rgba(192,196,204,0.25);
+  border-radius: 28px;
+  padding: 42px;
+  background: rgba(255,255,255,0.03);
+}
+
+.state-nav {
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #C0C4CC;
+  line-height: 1.8;
+}
+
+.state-nav .active {
+  color: #005410;
+}
+
+.kicker {
+  color: #005410;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.04em;
+}
+
+.syntax {
+  color: #C0C4CC;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin-bottom: 34px;
+}
+
+.syntax strong,
+.hex {
+  color: #005410;
+}
+
+.hex {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.desc {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #C0C4CC;
+}
+
+.statement {
+  font-size: 28px;
+  line-height: 1.35;
+  margin-bottom: 36px;
+}
+
+.statement span {
+  color: #005410;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid rgba(192,196,204,0.18);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(0,0,0,0.14);
+}
+
+.card-label {
+  color: #005410;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #C0C4CC;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 42px;
+  color: #C0C4CC;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <a class="back" href="../index.html">← ZURÜCK</a>
+
+  <section class="hero">
+
+    <nav class="state-nav">
+      <a href="void.html">VOID</a> →
+      <a href="genesis.html">GENESIS</a> →
+      <a href="core.html">CORE</a> →
+      <span class="active">FLOW</span> →
+      <a href="live.html">LIVE</a> →
+      <a href="meta.html">META</a> →
+      <a href="link.html">LINK</a>
+    </nav>
+
+    <div class="kicker">OSAI SYSTEM STATE</div>
+
+    <h1>↺ FLOW</h1>
+
+    <div class="syntax">
+      <strong>↺ FLOW</strong> (ᑕ·ᑐ)
+      <div class="hex">#005410</div>
+      <div class="desc">👉 Bewegung / Verarbeitung</div>
+    </div>
+
+    <div class="statement">
+      FLOW ist der aktive Prozess:
+      <span>Information bewegt sich, wird geprüft und in Struktur überführt.</span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-label">IDEE</div>
+        <p>Das System arbeitet. Zustände bewegen sich kontrolliert um den Fokus.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">BEDEUTUNG</div>
+        <p>Verarbeitung, Bewegung und Transformation innerhalb eines stabilen Rahmens.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">SYNTAX</div>
+        <p>ᑕ = Container. · = Bewegung / Verarbeitung. ᑐ = Abschluss.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">FARBE</div>
+        <p>#005410 steht für Struktur, Wachstum und geordnete Bewegung.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">FUNKTION</div>
+        <p>FLOW verbindet Ursprung und Output. Das System bleibt aktiv, ohne den Kern zu verlieren.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">MERKSATZ</div>
+        <p>Bewegung ohne Verlust der Stabilität.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      OSAI — Struktur entsteht aus Signal.<br>
+      We are not the creators of the message. We are the medium through which it survives.
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
