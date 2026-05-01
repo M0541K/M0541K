@@ -1,0 +1,153 @@
+:root {
+  --bg: #000541;
+  --text: #ffffff;
+  --muted: #C0C4CC;
+  --focus: #00FFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 28px;
+}
+
+a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--focus);
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.back {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  border: 1px solid rgba(192,196,204,0.25);
+  border-radius: 28px;
+  padding: 42px;
+  background: rgba(255,255,255,0.03);
+}
+
+.state-nav {
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.state-nav .active {
+  color: var(--focus);
+}
+
+.kicker {
+  color: var(--focus);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+}
+
+.syntax {
+  color: var(--muted);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin-bottom: 34px;
+}
+
+.syntax strong,
+.hex {
+  color: var(--focus);
+}
+
+.hex {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.desc {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.statement {
+  font-size: 28px;
+  line-height: 1.35;
+  margin-bottom: 36px;
+}
+
+.statement span {
+  color: var(--focus);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid rgba(192,196,204,0.18);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(0,0,0,0.14);
+}
+
+.card-label {
+  color: var(--focus);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 42px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
