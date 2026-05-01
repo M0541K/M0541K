@@ -182,6 +182,13 @@ body.void-page {
   background: #000000;
 }
 
+/* ==VOID === langsamer Aufbau== */
+/* → weil kein Zustand existiert */
+/* =→ erst muss etwas entstehen= */
+body.void-page.page-loaded {
+  transition-duration: 1.2s;
+}
+
 .hero.void {
   background: transparent;
   border: none;
