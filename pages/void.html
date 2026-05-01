@@ -1,121 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSAI — VOID</title>
+
 <link rel="stylesheet" href="../assets/css/style.css">
+</head>
 
 <body class="void-page">
 
-/* echter Nullraum */
-body.void-page {
-  background: #000000;
-}
+<div class="wrapper">
 
-/* Container verschwindet */
-.hero.void {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+<a class="back" href="../index.html">← ZURÜCK</a>
 
-  opacity: 0;
-  transform: translateY(14px);
-  animation: voidFade 2.2s ease forwards;
-}
+<section class="hero void">
 
-/* sanfter Aufbau */
-@keyframes voidFade {
-  0% {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  100% {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
-}
+<nav class="state-nav">
+  <span class="active">VOID</span> →
+  <a href="genesis.html">GENESIS</a> →
+  <a href="core.html">CORE</a> →
+  <a href="flow.html">FLOW</a> →
+  <a href="live.html">LIVE</a> →
+  <a href="meta.html">META</a> →
+  <a href="link.html">LINK</a>
+</nav>
 
-/* gesamter Bereich wirkt „fern“ */
-.void {
-  color: #ffffff;
-  opacity: 0.85;
-}
+<div class="kicker">OSAI SYSTEM STATE</div>
 
-/* Navigation = fast nicht da */
-.void .state-nav,
-.void .kicker {
-  opacity: 0.15;
-}
+<h1 class="state-title">
+  <span class="state-symbol">○</span>
+  <span class="state-name">VOID</span>
+</h1>
 
-/* Infos nur angedeutet */
-.void .syntax,
-.void .hex,
-.void .desc {
-  color: #666666;
-}
+<div class="syntax">
+  <strong>VOID</strong> (ᑕ?ᑐ)
+  <div class="hex">#00021D</div>
+  <div class="desc">👉 Potential / ungesetzter Zustand</div>
+</div>
 
-/* Fokus bleibt lesbar */
-.void .statement span {
-  color: #ffffff;
-}
+<div class="statement">
+  Vor dem Signal existiert nichts –
+  <span>nur Potential ohne Form.</span>
+</div>
 
-/* ultra subtle vignette (Tiefe) */
-body.void-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0) 0%,
-    rgba(0,0,0,0.6) 100%
-  )
-}
+</section>
 
-  body.void-page {
-  background: #000000;
-}
+</div>
 
-.hero.void {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-
-  opacity: 0;
-  transform: translateY(14px);
-  animation: voidFade 2.2s ease forwards;
-}
-
-@keyframes voidFade {
-  0% {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  100% {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
-}
-
-.void {
-  color: #ffffff;
-  opacity: 0.85;
-}
-
-.void .state-nav,
-.void .kicker {
-  opacity: 0.15;
-}
-
-.void .syntax,
-.void .hex,
-.void .desc {
-  color: #666666;
-}
-
-.void .statement span {
-  color: #ffffff;
-}
-
-body.void-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
-}
+</body>
+</html>
