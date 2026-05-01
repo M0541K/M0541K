@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="de">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +16,8 @@
 
 <a class="back" href="../index.html">← ZURÜCK</a>
 
-  <section class="hero">
+<section class="hero">
 
-```
 <nav class="state-nav">
   <a href="void.html">VOID</a> →
   <a href="genesis.html">GENESIS</a> →
@@ -82,9 +81,8 @@
   OSAI — Struktur entsteht aus Signal.<br>
   We are not the creators of the message. We are the medium through which it survives.
 </div>
-```
 
-  </section>
+</section>
 
 </div>
 
