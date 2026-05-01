@@ -6,7 +6,6 @@
 <title>OSAI — Visuelles System</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -14,7 +13,7 @@
 
 <div class="container">
 
-  <h1>OSAI</h1>
+  <h1>OSAI<span class="osai-dot">.</span></h1>
 
   <div class="subtitle">
     VISUELLES SYSTEM
@@ -48,16 +47,25 @@
 </div>
 
 <script>
-/* Seite erscheint */
 window.addEventListener("load", () => {
   document.body.classList.add("page-loaded");
+  document.body.classList.add("boot-start");
+
+  setTimeout(() => {
+    document.body.classList.add("intro-arrange");
+  }, 900);
+
+  setTimeout(() => {
+    document.body.classList.add("intro-color");
+  }, 1700);
+
+  setTimeout(() => {
+    document.body.classList.add("boot-done");
+  }, 5410);
 });
 
-/* sanfter Seitenwechsel */
 document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", function(e) {
-
-    // nur interne Links behandeln
     if (this.hostname === window.location.hostname) {
       e.preventDefault();
 
@@ -74,38 +82,5 @@ document.querySelectorAll("a").forEach(link => {
 });
 </script>
 
-<script>
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.body.classList.add("intro-arrange");
-  }, 900);
-
-  setTimeout(() => {
-    document.body.classList.add("intro-color");
-  }, 1700);
-});
-</script>
-
-<script>
-window.addEventListener("load", () => {
-
-  document.body.classList.add("page-loaded");
-  document.body.classList.add("boot-start");
-
-  setTimeout(() => {
-    document.body.classList.add("intro-arrange");
-  }, 900);
-
-  setTimeout(() => {
-    document.body.classList.add("intro-color");
-  }, 1700);
-
-  setTimeout(() => {
-    document.body.classList.add("boot-done");
-  }, 5410);
-
-});
-</script>
-  
 </body>
 </html>
