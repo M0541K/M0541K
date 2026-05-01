@@ -566,3 +566,70 @@ body.page-leave {
   transform: translateY(-10px);
 }
 
+/* ========================= */
+/* PRECISION TRANSITIONS */
+/* ========================= */
+
+/* VOID → GENESIS: aus Nichts entsteht Impuls */
+body.from-void.to-genesis {
+  opacity: 0;
+  transform: scale(0.96) translateY(24px);
+}
+
+body.page-loaded.from-void.to-genesis {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+
+/* VOID → andere Seiten: langsamer Aufbau */
+body.from-void:not(.to-genesis) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+body.page-loaded.from-void:not(.to-genesis) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+
+/* FLOW → LINK: Bewegung wird Verbindung */
+body.from-flow.to-link {
+  opacity: 0.8;
+  transform: translateX(-18px) scaleX(0.98);
+}
+
+body.page-loaded.from-flow.to-link {
+  opacity: 1;
+  transform: translateX(0) scaleX(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* META → CORE: Instabilität wird Struktur */
+body.from-meta.to-core {
+  filter: blur(3px);
+  transform: scale(1.01);
+}
+
+body.page-loaded.from-meta.to-core {
+  filter: blur(0);
+  transform: scale(1);
+  transition: filter 0.7s ease, transform 0.7s ease;
+}
+
+
+/* LINK → LIVE: Verbindung wird aktiv */
+body.from-link.to-live {
+  opacity: 0.75;
+  transform: scale(0.98);
+}
+
+body.page-loaded.from-link.to-live {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
