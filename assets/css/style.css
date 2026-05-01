@@ -5,12 +5,14 @@
   --focus: #00FFFF;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
   font-family: Arial, sans-serif;
   background: var(--bg);
@@ -32,6 +34,7 @@ a:hover {
   margin: 0 auto;
 }
 
+/* BACK */
 .back {
   display: block;
   margin-bottom: 32px;
@@ -39,6 +42,7 @@ a:hover {
   letter-spacing: 0.12em;
 }
 
+/* HERO */
 .hero {
   border: 1px solid rgba(192,196,204,0.25);
   border-radius: 28px;
@@ -46,6 +50,7 @@ a:hover {
   background: rgba(255,255,255,0.03);
 }
 
+/* NAV */
 .state-nav {
   margin-bottom: 32px;
   font-size: 12px;
@@ -58,6 +63,7 @@ a:hover {
   color: var(--focus);
 }
 
+/* HEADLINE */
 .state-title {
   display: grid;
   grid-template-columns: 130px 1fr;
@@ -70,12 +76,15 @@ a:hover {
 
 .state-symbol {
   text-align: center;
+  display: inline-block;
+  color: #ffffff;
 }
 
 .state-name {
   text-align: left;
 }
 
+/* KICKER */
 .kicker {
   color: var(--focus);
   font-size: 12px;
@@ -83,6 +92,7 @@ a:hover {
   margin-bottom: 22px;
 }
 
+/* SYNTAX */
 .syntax {
   color: var(--muted);
   font-size: 22px;
@@ -107,20 +117,28 @@ a:hover {
   color: var(--muted);
 }
 
+/* STATEMENT */
 .statement {
   font-size: 28px;
   line-height: 1.35;
   margin-bottom: 36px;
+  min-height: 110px; /* verhindert Springen */
 }
 
 .statement span {
   color: var(--focus);
 }
 
+/* ========================= */
+/* GRID (OSAI STABIL) */
+/* ========================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, minmax(150px, auto));
   gap: 18px;
+  align-items: stretch;
 }
 
 .card {
@@ -128,6 +146,11 @@ a:hover {
   border-radius: 20px;
   padding: 22px;
   background: rgba(0,0,0,0.14);
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card-label {
@@ -143,6 +166,7 @@ a:hover {
   line-height: 1.55;
 }
 
+/* FOOTER */
 .footer {
   margin-top: 42px;
   color: var(--muted);
@@ -150,7 +174,9 @@ a:hover {
   line-height: 1.6;
 }
 
-/* ===== VOID HIGH-END ===== */
+/* ========================= */
+/* VOID HIGH-END */
+/* ========================= */
 
 body.void-page {
   background: #000000;
@@ -162,6 +188,7 @@ body.void-page {
   box-shadow: none;
 }
 
+/* nur Content bewegt sich */
 .void-content {
   opacity: 0;
   transform: translateY(14px);
@@ -175,6 +202,7 @@ body.void-page {
   }
 }
 
+/* reduzierte Wahrnehmung */
 .void {
   color: #ffffff;
 }
@@ -184,11 +212,11 @@ body.void-page {
   opacity: 0.3;
 }
 
-.void .syntax,
+/* VOID überschreibt gesammelt */
+.void .statement,
 .void .hex,
 .void .desc,
-.void .syntax strong,
-.void .statement {
+.void .syntax strong {
   color: #888888;
 }
 
@@ -196,25 +224,40 @@ body.void-page {
   color: #cccccc;
 }
 
+/* Tiefe */
 body.void-page::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 100%
+  );
 }
 
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
 @media (max-width: 760px) {
+
   .hero {
     padding: 28px;
   }
 
   .grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .state-title {
     grid-template-columns: 80px 1fr;
     font-size: 48px;
+  }
+
+  .statement {
+    font-size: 22px;
   }
 }
