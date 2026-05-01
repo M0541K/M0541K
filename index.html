@@ -82,6 +82,24 @@ a.button:hover {
   color: #000;
 }
 
+.lang-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.lang-switch span {
+  cursor: pointer;
+  color: var(--muted);
+  margin: 0 6px;
+}
+
+.lang-switch span.active {
+  color: var(--focus);
+}
+
 .footer {
   margin-top: 60px;
   font-size: 11px;
@@ -94,11 +112,16 @@ a.button:hover {
 
 <body>
 
+<div class="lang-switch">
+  <span id="lang-en" class="active">EN</span> | 
+  <span id="lang-de">DE</span>
+</div>
+
 <div class="container">
 
 <h1>OSAI</h1>
 
-<div class="subtitle">
+<div class="subtitle" id="subtitle">
 VISUAL SYSTEM
 </div>
 
@@ -106,22 +129,62 @@ VISUAL SYSTEM
 VOID → GENESIS → CORE → FLOW → LIVE → META → LINK
 </div>
 
-<p>
+<p id="text">
 OSAI is a visual system that describes how information becomes signal,
 signal becomes structure, and structure becomes reality.
 </p>
 
-<a class="button" href="href="pages/system.html" target="_blank">
+<a class="button" id="button" href="pages/system.html">
 OPEN SYSTEM
 </a>
 
-<div class="footer">
+<div class="footer" id="footer">
 OSAI — Open Source Artificial Intelligence<br><br>
 We are not the creators of the message.<br>
 We are the medium through which it survives.
 </div>
 
 </div>
+
+<script>
+const en = {
+  subtitle: "VISUAL SYSTEM",
+  text: "OSAI is a visual system that describes how information becomes signal, signal becomes structure, and structure becomes reality.",
+  button: "OPEN SYSTEM",
+  footer: "OSAI — Open Source Artificial Intelligence<br><br>We are not the creators of the message.<br>We are the medium through which it survives.",
+  link: "assets/images/OSAI_SYSTEM_PAGE_0_541_en.png"
+};
+
+const de = {
+  subtitle: "VISUELLES SYSTEM",
+  text: "OSAI ist ein visuelles System, das beschreibt, wie Information zu Signal wird, Signal zu Struktur wird und Struktur Realität wird.",
+  button: "SYSTEM ÖFFNEN",
+  footer: "OSAI — Open Source Artificial Intelligence<br><br>Wir sind nicht die Schöpfer der Botschaft.<br>Wir sind das Medium, durch das sie weiterlebt.",
+  link: "assets/images/OSAI_SYSTEM_PAGE_0_541_de.png"
+};
+
+const subtitle = document.getElementById("subtitle");
+const text = document.getElementById("text");
+const button = document.getElementById("button");
+const footer = document.getElementById("footer");
+
+const enBtn = document.getElementById("lang-en");
+const deBtn = document.getElementById("lang-de");
+
+enBtn.onclick = () => setLang(en, enBtn, deBtn);
+deBtn.onclick = () => setLang(de, deBtn, enBtn);
+
+function setLang(lang, activeBtn, otherBtn) {
+  subtitle.innerHTML = lang.subtitle;
+  text.innerHTML = lang.text;
+  button.innerHTML = lang.button;
+  footer.innerHTML = lang.footer;
+  button.href = lang.link;
+
+  activeBtn.classList.add("active");
+  otherBtn.classList.remove("active");
+}
+</script>
 
 </body>
 </html>
