@@ -321,7 +321,14 @@ body.page-loaded.from-live {
 /* RESPONSIVE */
 /* ========================= */
 
+/* INDEX BOOT INTRO */
+/* OSAI BOOT ANIMATION */
+/* OSAI DOT */
 @media (max-width: 760px) {
+  .grid { ... }
+  .state-title { ... }
+  .statement { ... }
+}  /* <-- HIER ZU */
 
   .grid {
     grid-template-columns: 1fr;
@@ -335,6 +342,7 @@ body.page-loaded.from-live {
     font-size: 22px;
   }
 
+  
   /* ========================= */
 /* INDEX BOOT INTRO */
 /* ========================= */
