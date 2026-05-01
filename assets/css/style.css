@@ -475,4 +475,27 @@ body.void-page::after {
     transform: scale(1.06);
     text-shadow: 0 0 18px rgba(0,255,200,0.45);
   }
+
+/* ========================= */
+/* PAGE TRANSITIONS */
+/* ========================= */
+
+/* Startzustand */
+body {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* sichtbar */
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* beim Verlassen */
+body.page-leave {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
