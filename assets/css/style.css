@@ -262,10 +262,29 @@ body.void-page {
 }
 
 .link-symbol {
-  animation: linkPulse 2s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+  animation: linkConnect 3.5s ease-in-out infinite,
+             linkPulse 2s ease-in-out infinite;
+}
+
+@keyframes linkConnect {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scaleX(1.15);
+    opacity: 1;
+  }
 }
 
 @keyframes linkPulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
   50% {
     filter: brightness(1.3);
   }
