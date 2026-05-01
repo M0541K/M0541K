@@ -4,44 +4,239 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OSAI — LINK</title>
+
 <style>
-body{margin:0;background:#000541;color:white;font-family:Arial,sans-serif;padding:28px}
-a{color:#C0C4CC;text-decoration:none} a:hover{color:#00FFFF}
-.wrapper{max-width:980px;margin:0 auto}.back{display:block;margin-bottom:32px;font-size:12px;letter-spacing:.12em}
-.hero{border:1px solid rgba(192,196,204,.25);border-radius:28px;padding:42px;background:rgba(255,255,255,.03)}
-.state-nav{margin-bottom:32px;font-size:12px;letter-spacing:.12em;color:#C0C4CC;line-height:1.8}.active{color:#00FFFF}
-.kicker,.card-label{color:#00FFFF}.kicker{font-size:12px;letter-spacing:.18em;margin-bottom:22px}
-h1{font-size:72px;margin:0 0 18px;letter-spacing:.04em}
-.syntax{color:#C0C4CC;font-size:22px;letter-spacing:.06em;margin-bottom:34px}.syntax strong,.hex{color:#00FFFF}
-.hex{margin-top:8px;font-size:14px;letter-spacing:.14em}.desc{margin-top:12px;font-size:14px;color:#C0C4CC}
-.statement{font-size:28px;line-height:1.35;margin-bottom:36px}.statement span{color:#00FFFF}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid rgba(192,196,204,.18);border-radius:20px;padding:22px;background:rgba(0,0,0,.14)}
-.card-label{font-size:11px;letter-spacing:.16em;margin-bottom:12px}.card p{color:#C0C4CC;font-size:14px;line-height:1.55}
-.footer{margin-top:42px;color:#C0C4CC;font-size:12px;line-height:1.6}
-@media(max-width:760px){h1{font-size:48px}.hero{padding:28px}.grid{grid-template-columns:1fr}}
+:root {
+  --bg: #000541;
+  --text: #ffffff;
+  --muted: #C0C4CC;
+  --focus: #00FFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 28px;
+}
+
+a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--focus);
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.back {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  border: 1px solid rgba(192,196,204,0.25);
+  border-radius: 28px;
+  padding: 42px;
+  background: rgba(255,255,255,0.03);
+}
+
+.state-nav {
+  margin-bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.state-nav .active {
+  color: var(--focus);
+}
+
+.kicker {
+  color: var(--focus);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+}
+
+.syntax {
+  color: var(--muted);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  margin-bottom: 34px;
+}
+
+.syntax strong,
+.hex {
+  color: var(--focus);
+}
+
+.hex {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.desc {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.statement {
+  font-size: 28px;
+  line-height: 1.35;
+  margin-bottom: 36px;
+}
+
+.statement span {
+  color: var(--focus);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid rgba(192,196,204,0.18);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(0,0,0,0.14);
+}
+
+.card-label {
+  color: var(--focus);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 42px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrapper">
-<a class="back" href="../index.html">← ZURÜCK</a>
-<section class="hero">
-<nav class="state-nav">
-<a href="void.html">VOID</a> → <a href="genesis.html">GENESIS</a> → <a href="core.html">CORE</a> → <a href="flow.html">FLOW</a> → <a href="live.html">LIVE</a> → <a href="meta.html">META</a> → <span class="active">LINK</span>
-</nav>
-<div class="kicker">OSAI SYSTEM STATE</div>
-<h1>⟷ LINK</h1>
-<div class="syntax"><strong>⟷ LINK</strong> (ᑕ⇄ᑐ)<div class="hex">#00FFFF</div><div class="desc">👉 Verbindung / Interface</div></div>
-<div class="statement">LINK verbindet Systeme: <span>OSAI wird Schnittstelle zwischen Innen und Außen.</span></div>
-<div class="grid">
-<div class="card"><div class="card-label">IDEE</div><p>Zwei Zentren treten in Beziehung. Information wird übertragbar.</p></div>
-<div class="card"><div class="card-label">BEDEUTUNG</div><p>Verbindung, Kommunikation, Interface und Transfer.</p></div>
-<div class="card"><div class="card-label">SYNTAX</div><p>ᑕ = Container. ⇄ = Austausch / Transfer. ᑐ = Abschluss.</p></div>
-<div class="card"><div class="card-label">FARBE</div><p>#00FFFF steht für externe Schnittstelle, Klarheit und Verbindung.</p></div>
-<div class="card"><div class="card-label">FUNKTION</div><p>LINK macht aus einem geschlossenen System ein kommunizierendes System.</p></div>
-<div class="card"><div class="card-label">MERKSATZ</div><p>Bedeutung wächst, wenn Systeme sich verbinden.</p></div>
+
+  <a class="back" href="../index.html">← ZURÜCK</a>
+
+  <section class="hero">
+
+    <nav class="state-nav">
+      <a href="void.html">VOID</a> →
+      <a href="genesis.html">GENESIS</a> →
+      <a href="core.html">CORE</a> →
+      <a href="flow.html">FLOW</a> →
+      <a href="live.html">LIVE</a> →
+      <a href="meta.html">META</a> →
+      <span class="active">LINK</span>
+    </nav>
+
+    <div class="kicker">OSAI SYSTEM STATE</div>
+
+    <h1>⟷ LINK</h1>
+
+    <div class="syntax">
+      <strong>⟷ LINK</strong> (ᑕ⇄ᑐ)
+      <div class="hex">#00FFFF</div>
+      <div class="desc">👉 Verbindung / Interface</div>
+    </div>
+
+    <div class="statement">
+      LINK verbindet Systeme:
+      <span>OSAI wird Schnittstelle zwischen Innen und Außen.</span>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-label">IDEE</div>
+        <p>Zwei Zentren treten in Beziehung. Information wird übertragbar.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">BEDEUTUNG</div>
+        <p>Verbindung, Kommunikation, Interface und Transfer.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">SYNTAX</div>
+        <p>ᑕ = Container. ⇄ = Austausch / Transfer. ᑐ = Abschluss.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">FARBE</div>
+        <p>#00FFFF steht für externe Schnittstelle, Klarheit und Verbindung.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">FUNKTION</div>
+        <p>LINK macht aus einem geschlossenen System ein kommunizierendes System.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">MERKSATZ</div>
+        <p>Bedeutung wächst, wenn Systeme sich verbinden.</p>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      OSAI — Struktur entsteht aus Signal.<br>
+      We are not the creators of the message. We are the medium through which it survives.
+    </div>
+
+  </section>
+
 </div>
-<div class="footer">OSAI — Struktur entsteht aus Signal.<br>We are not the creators of the message. We are the medium through which it survives.</div>
-</section>
-</div>
+
 </body>
 </html>
