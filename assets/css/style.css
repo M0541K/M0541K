@@ -410,3 +410,8 @@ body.void-page::after {
     opacity: 1;
   }
 }
+
+.live-symbol {
+  display: inline-block;
+  animation: livePulse 2.2s ease-in-out infinite;
+}
