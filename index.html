@@ -87,13 +87,24 @@ window.addEventListener("load", () => {
 </script>
 
 <script>
-window.onload = () => {
+window.addEventListener("load", () => {
+
+  document.body.classList.add("page-loaded");
   document.body.classList.add("boot-start");
+
+  setTimeout(() => {
+    document.body.classList.add("intro-arrange");
+  }, 900);
+
+  setTimeout(() => {
+    document.body.classList.add("intro-color");
+  }, 1700);
 
   setTimeout(() => {
     document.body.classList.add("boot-done");
   }, 5410);
-};
+
+});
 </script>
   
 </body>
