@@ -291,19 +291,47 @@ body.void-page::after {
 }
 
 /* ===== FLOW LOGO ===== */
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 760px) {
+
+  .hero {
+    padding: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .state-title {
+    grid-template-columns: 80px 1fr;
+    font-size: 48px;
+  }
+
+  .statement {
+    font-size: 22px;
+  }
+}
+
+/* ========================= */
+/* ===== FLOW LOGO ===== */
+/* ========================= */
 
 .flow-symbol {
+  display: inline-block;
+  transform-origin: center;
   animation: flowDrift 6s ease-in-out infinite,
              flowNoise 2.5s linear infinite;
 }
 
-/* ===== kaum sichtbar → aber fühlbar ===== */
-/* ===== 0% / 100% → Zustand (ruhig) ===== */
-/* ===== 54% → dein Fokuspunkt → Peak / Veränderung ===== */
-@keyframes flowNoise {
-  0%,100% { filter: blur(0.2px); }
-  54% { filter: blur(0.5px); }
-}
+@keyframes flowDrift {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.9;
+  }
 
   25% {
     transform: translate(2px, -3px) scale(1.03);
@@ -317,11 +345,18 @@ body.void-page::after {
   75% {
     transform: translate(2px, 3px) scale(1.02);
   }
+}
 
-  100% {
-    transform: translate(0px, 0px) scale(1);
-    opacity: 0.9;
+/* 0% / 100% = Zustand, 54% = Fokuspunkt */
+@keyframes flowNoise {
+  0%, 100% {
+    filter: blur(0.2px);
   }
+
+  54% {
+    filter: blur(0.5px);
+  }
+}
 
 /* ========================= */
 /* ===== META LOGO ===== */
@@ -334,9 +369,8 @@ body.void-page::after {
   animation: metaDrift 5s ease-in-out infinite;
 }
 
-/* leichte Grundbewegung */
 @keyframes metaDrift {
-  0%,100% {
+  0%, 100% {
     transform: translate(0px, 0px);
   }
 
@@ -345,7 +379,6 @@ body.void-page::after {
   }
 }
 
-/* Glitch Layer */
 .meta-symbol::before,
 .meta-symbol::after {
   content: attr(data-symbol);
@@ -355,21 +388,18 @@ body.void-page::after {
   pointer-events: none;
 }
 
-/* Cyan Offset */
 .meta-symbol::before {
   color: #00FFFF;
   transform: translate(1px, 0);
   animation: metaGlitch 3.2s infinite;
 }
 
-/* Magenta Offset */
 .meta-symbol::after {
   color: #ff00aa;
   transform: translate(-1px, 0);
   animation: metaGlitch 3.2s infinite reverse;
 }
 
-/* kurzer, seltener Glitch */
 @keyframes metaGlitch {
   0%, 92%, 100% {
     opacity: 0;
@@ -390,20 +420,24 @@ body.void-page::after {
   96% {
     opacity: 0;
   }
+}
 
 /* ========================= */
 /* ===== LINK LOGO ===== */
 /* ========================= */
 
 .link-symbol {
+  display: inline-block;
+  transform-origin: center;
   animation: linkConnect 3.5s ease-in-out infinite,
              linkPulse 2s ease-in-out infinite;
 }
 
-@keyframes linkPulse {
-  0%,100% { filter: brightness(1); }
-  50% { filter: brightness(1.3); }
-}
+@keyframes linkConnect {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.85;
+  }
 
   50% {
     transform: scaleX(1.15);
@@ -411,7 +445,34 @@ body.void-page::after {
   }
 }
 
+@keyframes linkPulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+/* ========================= */
+/* ===== LIVE LOGO ===== */
+/* ========================= */
+
 .live-symbol {
   display: inline-block;
+  transform-origin: center;
   animation: livePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 0px rgba(0,255,200,0);
+  }
+
+  50% {
+    transform: scale(1.06);
+    text-shadow: 0 0 18px rgba(0,255,200,0.45);
+  }
 }
