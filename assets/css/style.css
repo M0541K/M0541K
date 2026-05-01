@@ -533,3 +533,44 @@ body.boot-start .boot-cursor {
 body.boot-done .boot-cursor {
   display: none;
 }
+
+/* ========================= */
+/* OSAI DOT (Impuls → Manifestation) */
+/* ========================= */
+
+.osai-dot {
+  display: inline-block;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: color 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* erscheint am Ende der Boot-Animation */
+body.boot-start .osai-dot {
+  animation: osaiDot 5.41s ease forwards;
+}
+
+@keyframes osaiDot {
+
+  /* komplett unsichtbar */
+  0%, 90% {
+    opacity: 0;
+    color: #ffffff;
+    transform: translateY(4px);
+  }
+
+  /* erscheint */
+  95% {
+    opacity: 1;
+    color: #ffffff;
+    transform: translateY(0);
+  }
+
+  /* finaler Zustand → deine Farbe */
+  100% {
+    opacity: 1;
+    color: #A0541B;
+    transform: translateY(0);
+  }
+}
