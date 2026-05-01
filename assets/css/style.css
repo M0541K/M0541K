@@ -404,3 +404,132 @@ body.index-page.intro-color .button {
   border-color: var(--index-focus);
 }
   
+/* ========================= */
+/* OSAI BOOT ANIMATION */
+/* ========================= */
+
+body.boot-page {
+  background: #ffffff;
+}
+
+body.boot-start {
+  animation: osaiBootBackground 5.41s ease forwards;
+}
+
+body.boot-start .container {
+  animation: osaiBootLayout 5.41s ease forwards;
+}
+
+body.boot-start h1,
+body.boot-start .subtitle,
+body.boot-start .flow,
+body.boot-start .flow a,
+body.boot-start p,
+body.boot-start .button,
+body.boot-start .footer {
+  animation: osaiBootText 5.41s ease forwards;
+}
+
+.boot-cursor {
+  display: inline-block;
+  width: 0.7em;
+  height: 1em;
+  margin-left: 0.25em;
+  vertical-align: -0.15em;
+  background: currentColor;
+  opacity: 0;
+}
+
+body.boot-start .boot-cursor {
+  animation: osaiBootCursor 5.41s steps(1, end) forwards;
+}
+
+@keyframes osaiBootBackground {
+  0% {
+    background: #ffffff;
+  }
+
+  10% {
+    background: #000541;
+  }
+
+  90% {
+    background: #000541;
+  }
+
+  100% {
+    background: radial-gradient(circle at center, #02063A 0%, #000541 70%);
+  }
+}
+
+@keyframes osaiBootLayout {
+  0%, 80% {
+    text-align: left;
+    transform: translate(-34vw, -28vh);
+  }
+
+  90% {
+    text-align: left;
+    transform: translate(-34vw, -28vh);
+  }
+
+  100% {
+    text-align: center;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes osaiBootText {
+  0% {
+    opacity: 0;
+    color: #ffffff;
+  }
+
+  10% {
+    opacity: 1;
+    color: #ffffff;
+  }
+
+  80% {
+    opacity: 1;
+    color: #ffffff;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes osaiBootCursor {
+  0%, 79% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  83% {
+    opacity: 0;
+  }
+
+  86% {
+    opacity: 1;
+  }
+
+  89% {
+    opacity: 0;
+  }
+
+  92% {
+    opacity: 1;
+  }
+
+  95%, 100% {
+    opacity: 0;
+  }
+}
+
+body.boot-done .boot-cursor {
+  display: none;
+}
