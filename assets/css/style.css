@@ -58,6 +58,7 @@ a:hover {
   color: var(--focus);
 }
 
+/* ===== FIX: ALIGNMENT SYMBOL + TEXT ===== */
 .state-title {
   display: grid;
   grid-template-columns: 130px 1fr;
@@ -156,6 +157,58 @@ h1 {
   line-height: 1.6;
 }
 
+/* ========================= */
+/* ===== VOID SPECIAL ===== */
+/* ========================= */
+
+/* echter Blackscreen */
+body.void-page {
+  background: #000000;
+}
+
+/* kein blauer Kasten mehr */
+.hero.void {
+  background: transparent;
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Fade-In Effekt */
+.hero.void {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: voidFade 1.8s ease forwards;
+}
+
+/* Animation */
+@keyframes voidFade {
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+}
+
+/* Texte sichtbar aber reduziert */
+.void {
+  color: #ffffff;
+}
+
+.void .state-nav,
+.void .kicker {
+  opacity: 0.3;
+}
+
+.void .syntax,
+.void .hex,
+.void .desc {
+  color: #777777;
+}
+
+.void .statement span {
+  color: #ffffff;
+}
+
+/* ========================= */
+
 @media (max-width: 760px) {
   h1 {
     font-size: 48px;
@@ -167,5 +220,10 @@ h1 {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .state-title {
+    grid-template-columns: 80px 1fr;
+    font-size: 48px;
   }
 }
