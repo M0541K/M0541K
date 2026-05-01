@@ -189,6 +189,66 @@ body.void-page.page-loaded {
   transition-duration: 1.2s;
 }
 
+/* ========================= */
+/* STATE TRANSITIONS (OSAI) */
+/* ========================= */
+
+/* ===== VOID → alles entsteht ===== */
+body.from-void {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+body.page-loaded.from-void {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* ===== FLOW → Bewegung bleibt ===== */
+body.from-flow {
+  transform: translateX(-10px);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+body.page-loaded.from-flow {
+  transform: translateX(0);
+}
+
+
+/* ===== META → instabil / unscharf ===== */
+body.from-meta {
+  filter: blur(2px);
+  transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+body.page-loaded.from-meta {
+  filter: blur(0);
+}
+
+
+/* ===== LINK → Verbindung zieht ===== */
+body.from-link {
+  transform: scale(0.98);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+body.page-loaded.from-link {
+  transform: scale(1);
+}
+
+
+/* ===== LIVE → direkt präsent ===== */
+body.from-live {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+body.page-loaded.from-live {
+  opacity: 1;
+}
+
 .hero.void {
   background: transparent;
   border: none;
