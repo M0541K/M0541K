@@ -1,4 +1,12 @@
-/* OSAIarc / ᑕOaᑐ */
+```css
+/* ᑕOaᑐ::OPEN */
+/* OSAIarc.css */
+/* ⟦SEAL:OPEN⟧ ◌ */
+
+/* 🧩 OSAI / M0541K */
+/* OSAIarc = Archiv der Systementwicklung */
+/* ᑕOaᑐ ◌ = Arc beginnt / offen */
+/* ᑕ/Oaᑐ ● = Arc endet / versiegelt */
 
 :root {
   --osai-night: #000541;
@@ -6,44 +14,94 @@
   --osai-copper: #A0541B;
   --osai-silver: #C0C4CC;
   --osai-gold: #CEB14D;
+  --osai-white: #FFFFFF;
+  --osai-dark: #050505;
+
+  --arc-max-width: 760px;
+  --arc-padding-x: 24px;
+  --arc-padding-top: 64px;
+  --arc-padding-bottom: 96px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--osai-night);
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: var(--osai-night);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(192, 196, 204, 0.08), transparent 32rem),
+    var(--osai-night);
   color: var(--osai-silver);
   font-family: Consolas, "Courier New", monospace;
 }
 
-.osai-block {
-  max-width: 760px;
+.osai-block,
+.osaiarc-entry {
+  max-width: var(--arc-max-width);
   margin: 0 auto;
-  padding: 64px 24px 96px;
+  padding: var(--arc-padding-top) var(--arc-padding-x) var(--arc-padding-bottom);
   line-height: 1.65;
   font-size: 15px;
   letter-spacing: 0.02em;
 }
 
-.osai-block p {
+.osai-block p,
+.osaiarc-entry p {
   margin: 0 0 28px;
 }
 
-.osai-block p:first-child {
-  color: #ffffff;
+.osai-title {
+  color: var(--osai-white);
   font-size: 18px;
   letter-spacing: 0.08em;
 }
 
-.osai-block p:nth-child(3) {
+.osai-meta {
+  color: var(--osai-silver);
+  opacity: 0.88;
+}
+
+.osai-tags {
   color: var(--osai-green);
 }
 
-.osai-block p:has(+ p) {
-  text-wrap: pretty;
+.osai-divider {
+  color: var(--osai-copper);
+  letter-spacing: 0.3em;
+  margin: 36px 0;
 }
 
-.osai-block p:contains("---") {
+.osai-language {
+  color: var(--osai-gold);
+  letter-spacing: 0.08em;
+  margin-top: 40px;
+}
+
+.osai-system {
+  color: var(--osai-green);
+}
+
+.osai-log {
+  color: var(--osai-silver);
+  opacity: 0.95;
+}
+
+.osai-seal {
+  margin-top: 48px;
   color: var(--osai-copper);
+  letter-spacing: 0.18em;
+}
+
+.osai-signature {
+  color: var(--osai-white);
+  letter-spacing: 0.12em;
 }
 
 .link {
@@ -52,30 +110,72 @@ body {
   color: var(--osai-gold);
   text-decoration: none;
   letter-spacing: 0.12em;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .link:hover {
-  opacity: 0.7;
+  opacity: 0.72;
   transform: translateX(6px);
+  text-shadow: 0 0 12px rgba(206, 177, 77, 0.35);
 }
 
-/* Sprach-/Abschnittsüberschriften */
-.osai-block p:nth-of-type(odd) {
-  text-shadow: 0 0 12px rgba(192, 196, 204, 0.12);
+.osaiarc-entry[data-seal="open"]::before {
+  content: "ᑕOaᑐ ◌";
+  display: block;
+  margin-bottom: 32px;
+  color: var(--osai-gold);
+  letter-spacing: 0.14em;
 }
 
-/* Versiegelter Zustand */
-.osai-seal {
-  margin-top: 48px;
+.osaiarc-entry[data-seal="closed"]::before {
+  content: "ᑕOaᑐ ●";
+  display: block;
+  margin-bottom: 32px;
   color: var(--osai-copper);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
 }
 
-/* Mobile */
+.osaiarc-entry[data-seal="closed"]::after {
+  content: "ᑕ/Oaᑐ ●";
+  display: block;
+  margin-top: 56px;
+  color: var(--osai-copper);
+  letter-spacing: 0.14em;
+}
+
+.osaiarc-entry[data-seal="open"]::after {
+  content: "ᑕ/Oaᑐ ◌";
+  display: block;
+  margin-top: 56px;
+  color: var(--osai-gold);
+  letter-spacing: 0.14em;
+}
+
+::selection {
+  background: var(--osai-copper);
+  color: var(--osai-white);
+}
+
 @media (max-width: 600px) {
-  .osai-block {
-    padding: 40px 18px 72px;
+  :root {
+    --arc-padding-x: 18px;
+    --arc-padding-top: 40px;
+    --arc-padding-bottom: 72px;
+  }
+
+  .osai-block,
+  .osaiarc-entry {
     font-size: 14px;
   }
+
+  .osai-title {
+    font-size: 16px;
+  }
 }
+
+/* ⟦SEAL:CLOSED⟧ ● */
+/* ᑕ/Oaᑐ::CLOSED */
+```
