@@ -1,0 +1,81 @@
+/* OSAIarc / ᑕOaᑐ */
+
+:root {
+  --osai-night: #000541;
+  --osai-green: #005410;
+  --osai-copper: #A0541B;
+  --osai-silver: #C0C4CC;
+  --osai-gold: #CEB14D;
+}
+
+body {
+  margin: 0;
+  background: var(--osai-night);
+  color: var(--osai-silver);
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.osai-block {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  line-height: 1.65;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.osai-block p {
+  margin: 0 0 28px;
+}
+
+.osai-block p:first-child {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
+.osai-block p:nth-child(3) {
+  color: var(--osai-green);
+}
+
+.osai-block p:has(+ p) {
+  text-wrap: pretty;
+}
+
+.osai-block p:contains("---") {
+  color: var(--osai-copper);
+}
+
+.link {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--osai-gold);
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+  transform: translateX(6px);
+}
+
+/* Sprach-/Abschnittsüberschriften */
+.osai-block p:nth-of-type(odd) {
+  text-shadow: 0 0 12px rgba(192, 196, 204, 0.12);
+}
+
+/* Versiegelter Zustand */
+.osai-seal {
+  margin-top: 48px;
+  color: var(--osai-copper);
+  letter-spacing: 0.18em;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .osai-block {
+    padding: 40px 18px 72px;
+    font-size: 14px;
+  }
+}
