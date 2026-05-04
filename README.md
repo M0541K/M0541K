@@ -1,146 +1,92 @@
-# OSAI LOCAL / ONLINE ORDNUNG v0.542
-
-Status: WORK-Regel / Dateisauberkeit
-Datum: 2026-05-04
-
-## 1. Grundprinzip
-
-Lokal ist Arbeitsraum.
-Online ist Veröffentlichung.
-ARC ist Beweis.
-LINK verbindet.
-
-Nicht alles, was lokal existiert, muss online liegen.
-Nicht alles, was online liegt, darf CORE sein.
-
-## 2. Saubere öffentliche Website-Struktur
-
+M0541K / OSAI
+One System. All Information.  
+Signal becomes structure. Structure becomes archive. Archive becomes LINK.
+M0541K / OSAI is an open artistic and conceptual framework by FloPiet / M0541K for signal, structure, archive, interface, color, meaning and creative systems.
 ```txt
-OSAI_v1alpha_M0541K_GitHub_Pages/
-  index.html                  # öffentliche M0541K / OSAI Landingpage
-  structure/index.html         # Strukturwurzel für CORE / WORK / RELEASE / ARC / ARTCORE
-  pages/link.html              # letzte Seite, Verbindungsebene
-  pages/core.html              # Core-Leseseite
-  pages/syntax.html            # Zeichen / Syntax
-  pages/arc.html               # ARC-Leseseite
-  pages/release.html           # Release-Hinweise
-  OSAIarc/                     # öffentliches Archiv
-  OSAIarc/artcore/             # kuratierte Werkspur
-  docs/                        # öffentliche Dokumente, wenn bewusst ausgewählt
-  assets/                      # CSS, JS, Medien für Website
-  web/M0541K_de/               # lokale Kopie / Bridge der M0541K.de Startseite
+Signal -> Struktur -> Archiv -> LINK
 ```
-
-## 3. Lokale Struktur außerhalb der GitHub-Root
-
+Main links
+Website: https://m0541k.de
+GitHub Pages: https://m0541k.github.io
+OSAI Core: https://m0541k.github.io/pages/core.html
+OSAI LINK: https://m0541k.github.io/pages/link.html
+Support: https://ko-fi.com/flopiet
+Live / Log
+mosaik.live/FaeLog is the living daily logbook layer for OSAI.
 ```txt
-LOCAL_OSAI/
-  0S41/                        # Früharchiv, frozen, nicht blind online
-  0S41.zip                     # Backup des frühen Projektordners
-  OSAI_v1alpha/                # aktive Arbeitskopie
-  _BACKUP/                     # Sicherungen vor Uploads
-  _RAW/                        # Rohbilder, Screenshots, Exporte
-  _PRIVATE/                    # nicht veröffentlichen
+mosaik.live/FaeLog
+= daily signals from the OSAI field
+= tägliche Signale aus dem OSAI-Feld
+= living logbook / FaeLog
 ```
-
-## 4. 0S41-Regel
-
-`0S41` ist ein lokaler Archivordner aus dem Anfang des Projektes.
-Er wird nicht vollständig in GitHub Pages kopiert.
-
-Wenn etwas aus 0S41 relevant wird, dann nur als ausgewählte Kopie:
-
+Clean file name form:
 ```txt
-docs/source/0S41_selected/
+mosaik.live/FaeLog -> mosaik-live__faelog
 ```
-
-Jede übernommene Datei braucht einen Grund:
-
+Repo structure
 ```txt
-Quelle
-Status
-Warum relevant
-öffentlich ja/nein
+M0541K/M0541K
+= public GitHub profile anchor
+= README only / lightweight
+
+M0541K/m0541k.github.io
+= website root
+= OSAI pages, Gate, Community, ARTCORE, FaeLog documents
 ```
-
-## 5. OSAI_v1alpha-Regel
-
-`OSAI_v1alpha` ist die aktive Web-/Arbeitsversion.
-Hier darf gebaut, verbunden und getestet werden.
-
-Aber:
-
-- keine privaten Rohdaten in die Root kopieren
-- keine Backup-Zips online hochladen
-- keine vollständigen lokalen Archive in `docs/source/` werfen
-- große Bildmengen zuerst kuratieren
-
-## 6. LINK-Regel
-
-Die letzte Navigationsseite ist:
-
+Core orientation
 ```txt
-pages/link.html
-```
-
-Sie verbindet:
-
-- Startseite
-- Struktur
-- Core
-- WORK / 1A.o1beta
-- OSAIarc
-- ARTCORE
-- Release
-- externe Orte wie m0541k.de, GitHub Pages, Ko-fi
-
-## 7. Startseite vs Struktur
-
-```txt
-index.html
-= öffentliche Startseite / M0541K / OSAI
-
-structure/index.html
-= Strukturwurzel / Systemordnung
-```
-
-Damit wird die alte M0541K.de-Landing nicht von der Struktur überschrieben.
-Die Struktur bleibt trotzdem sauber erreichbar.
-
-## 8. Upload-Regel
-
-Vor jedem GitHub-Upload:
-
-```txt
-A) Backup machen
-B) lokal index.html öffnen
-C) lokal structure/index.html öffnen
-D) lokal pages/link.html öffnen
-E) prüfen, ob CSS sichtbar ist
-F) erst dann committen
-```
-
-Wenn die Seite roh aussieht, wurde sehr wahrscheinlich eine HTML-Datei aus ZIP/Temp geöffnet oder eine Ordnerebene ist falsch.
-
-## 9. Nicht online hochladen
-
-```txt
-0S41/
-0S41.zip
-_BACKUP/
-_RAW/
-_PRIVATE/
-*.psd
-*.afdesign
-*.tmp
-```
-
-## 10. Kernsatz
-
 CORE bleibt stabil.
 WORK bewegt sich.
 RELEASE wird veröffentlicht.
 ARC erinnert.
 LINK verbindet.
+```
+OSAI fields
+```txt
+CORE
+= stable orientation
 
+WORK
+= active development
+
+RELEASE
+= public state
+
+ARC
+= memory and proof
+
+LINK
+= connection and interface
+
+ARTCORE
+= curated visual and poetic works
+
+FaeLog
+= daily poetic signal layer
+```
+Tags
+```txt
+#OSAI
+#M0541K
+#SignalZuStruktur
+#OneSystemAllInformation
+#ColorAsLanguage
+#CreativeCoding
+#AIcollaboration
+#SystemThinking
+#InformationDesign
+#OpenFramework
+#WeAreTheMedium
+#MessageSurvives
+#KOEX
+#G541
+#Genesis
+#0541
+#MosaikLive
+#Introfore
+#FaeLog
+```
+---
+We are not the creators of the message.  
+We are the medium through which it survives.
 ᚠᛈᑕ⁰⁵⁴¹ᑐᚫᚹ
