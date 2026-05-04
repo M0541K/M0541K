@@ -1,0 +1,26 @@
+# OSAI local/private protection
+0S41/
+0S41.zip
+03_ARC/private/
+OSAIarc/**/private/
+docs/admin/
+docs/pdf/
+docs/source/
+pdf-pool/
+pictures/
+raw/
+private/
+backup/
+*_BACKUP*/
+_BACKUP/
+_RAW/
+_PRIVATE/
+OSAI_v1alpha_M0541K_GitHub_Pages/
+
+# system / temporary
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+.env
