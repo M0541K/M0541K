@@ -2,602 +2,67 @@
   --bg: #000541;
   --text: #ffffff;
   --muted: #C0C4CC;
-  --focus: #00FFFF;
+  --green: #005410;
+  --copper: #A0541B;
+  --gold: #CEB14D;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* BASE */
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(160,84,27,0.22), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(0,84,16,0.22), transparent 28%),
+    var(--bg);
   color: var(--text);
-  padding: 28px;
-
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-body.page-loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-body.page-leave {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--focus);
-}
-
-.wrapper {
-  max-width: 980px;
+.page {
+  width: min(920px, 92vw);
   margin: 0 auto;
+  padding: 12vh 0;
 }
 
-/* BACK */
-.back {
-  display: block;
-  margin-bottom: 32px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
-
-/* HERO */
-.hero {
-  border: 1px solid rgba(192,196,204,0.25);
-  border-radius: 28px;
-  padding: 42px;
-  background: rgba(255,255,255,0.03);
-}
-
-/* NAV */
-.state-nav {
-  margin-bottom: 32px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.state-nav .active {
-  color: var(--focus);
-}
-
-/* HEADLINE */
-.state-title {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  align-items: center;
-  column-gap: 32px;
-  font-size: 72px;
-  margin: 0 0 18px;
-}
-
-.state-symbol {
-  text-align: center;
-  display: inline-block;
-}
-
-.state-name {
-  text-align: left;
-}
-
-/* KICKER */
-.kicker {
-  color: var(--focus);
-  font-size: 12px;
+.eyebrow {
+  color: var(--gold);
   letter-spacing: 0.18em;
-  margin-bottom: 22px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
-/* SYNTAX */
-.syntax {
+h1 {
+  font-size: clamp(2.4rem, 8vw, 6rem);
+  line-height: 0.95;
+  margin: 0.2em 0;
+}
+
+.lead {
   color: var(--muted);
-  font-size: 22px;
-  margin-bottom: 34px;
+  max-width: 680px;
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
-.syntax strong,
-.hex {
-  color: var(--focus);
-}
-
-.hex {
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-.desc {
-  margin-top: 12px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* STATEMENT */
-.statement {
-  font-size: 28px;
-  line-height: 1.35;
-  margin-bottom: 36px;
-  min-height: 110px;
-}
-
-.statement span {
-  color: var(--focus);
-}
-
-/* GRID */
-.grid {
+.link-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
 }
 
-.card {
-  border: 1px solid rgba(192,196,204,0.18);
-  border-radius: 20px;
-  padding: 22px;
-  background: rgba(0,0,0,0.14);
-  min-height: 150px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.card-label {
-  color: var(--focus);
-  font-size: 11px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 42px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* ========================= */
-/* VOID */
-/* ========================= */
-
-body.void-page {
-  background: #000000;
-}
-
-.hero.void {
-  background: transparent;
-  border: none;
-}
-
-.void-content {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: voidFade 2.2s ease forwards;
-}
-
-@keyframes voidFade {
-  to {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
-}
-
-.void .state-nav,
-.void .kicker {
-  opacity: 0.3;
-}
-
-.void .statement,
-.void .hex,
-.void .desc,
-.void .syntax strong {
-  color: #888;
-}
-
-.void .statement span {
-  color: #ccc;
-}
-
-/* ========================= */
-/* SYMBOL ANIMATION */
-/* ========================= */
-
-.genesis-symbol {
-  animation: genesisPulse 3s ease-in-out infinite;
-}
-
-@keyframes genesisPulse {
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-.flow-symbol {
-  animation: flowDrift 6s ease-in-out infinite;
-}
-
-@keyframes flowDrift {
-  50% {
-    transform: translate(-3px, 2px);
-  }
-}
-
-.live-symbol {
-  animation: livePulse 2s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-  50% {
-    transform: scale(1.06);
-  }
-}
-
-.meta-symbol {
-  animation: metaDrift 5s ease-in-out infinite;
-}
-
-@keyframes metaDrift {
-  50% {
-    transform: translate(1px, -1px);
-  }
-}
-
-.link-symbol {
+.link-grid a,
+.backlink {
   display: inline-block;
-  transform-origin: center;
-  animation: linkConnect 3.5s ease-in-out infinite,
-             linkPulse 2s ease-in-out infinite;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  padding: 0.9rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.04);
 }
 
-@keyframes linkConnect {
-  0%, 100% {
-    transform: scaleX(1);
-    opacity: 0.85;
-  }
-
-  50% {
-    transform: scaleX(1.15);
-    opacity: 1;
-  }
-}
-
-@keyframes linkPulse {
-  0%, 100% {
-    filter: brightness(1);
-  }
-
-  50% {
-    filter: brightness(1.3);
-  }
-}
-
-/* ========================= */
-/* STATE TRANSITIONS */
-/* ========================= */
-
-body.from-void {
-  transform: translateY(20px);
-  opacity: 0;
-}
-
-body.page-loaded.from-void {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-body.from-flow {
-  transform: translateX(-10px);
-}
-
-body.page-loaded.from-flow {
-  transform: translateX(0);
-}
-
-body.from-meta {
-  filter: blur(2px);
-}
-
-body.page-loaded.from-meta {
-  filter: blur(0);
-}
-
-body.from-link {
-  transform: scale(0.98);
-}
-
-body.page-loaded.from-link {
-  transform: scale(1);
-}
-
-body.from-live {
-  opacity: 0.7;
-}
-
-body.page-loaded.from-live {
-  opacity: 1;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-/* INDEX BOOT INTRO */
-/* OSAI BOOT ANIMATION */
-/* OSAI DOT */
-@media (max-width: 760px) {
-  .grid { ... }
-  .state-title { ... }
-  .statement { ... }
-}  /* <-- HIER ZU */
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .state-title {
-    font-size: 48px;
-  }
-
-  .statement {
-    font-size: 22px;
-  }
-
-  
-  /* ========================= */
-/* INDEX BOOT INTRO */
-/* ========================= */
-
-body.index-page.intro-boot {
-  background: #000541;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  transition:
-    background 1.2s ease,
-    align-items 1.2s ease,
-    justify-content 1.2s ease;
-}
-
-/* Rohzustand: C64 / Terminal */
-body.index-page.intro-boot .container {
-  opacity: 1;
-  transform: translate(0, 0);
-  transition:
-    transform 1.2s ease,
-    opacity 1.2s ease;
-}
-
-body.index-page.intro-boot h1,
-body.index-page.intro-boot .subtitle,
-body.index-page.intro-boot .flow,
-body.index-page.intro-boot p,
-body.index-page.intro-boot .button,
-body.index-page.intro-boot .footer {
-  color: #ffffff;
-  opacity: 0.95;
-  transition:
-    color 1.2s ease,
-    opacity 1.2s ease,
-    border-color 1.2s ease,
-    background 1.2s ease,
-    transform 1.2s ease;
-}
-
-/* Ordnung entsteht */
-body.index-page.intro-arrange {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-body.index-page.intro-arrange .container {
-  transform: translateY(0);
-}
-
-/* Farben kommen zurück */
-body.index-page.intro-color {
-  background: radial-gradient(circle at center, #02063A 0%, #000541 70%);
-}
-
-body.index-page.intro-color .subtitle,
-body.index-page.intro-color p,
-body.index-page.intro-color .footer {
-  color: var(--muted);
-}
-
-body.index-page.intro-color .flow,
-body.index-page.intro-color .flow a,
-body.index-page.intro-color .button {
-  color: var(--index-focus);
-  border-color: var(--index-focus);
-}
-  
-/* ========================= */
-/* OSAI BOOT ANIMATION */
-/* ========================= */
-
-body.boot-page {
-  background: #ffffff;
-}
-
-body.boot-start {
-  animation: osaiBootBackground 5.41s ease forwards;
-}
-
-body.boot-start .container {
-  animation: osaiBootLayout 5.41s ease forwards;
-}
-
-body.boot-start h1,
-body.boot-start .subtitle,
-body.boot-start .flow,
-body.boot-start .flow a,
-body.boot-start p,
-body.boot-start .button,
-body.boot-start .footer {
-  animation: osaiBootText 5.41s ease forwards;
-}
-
-.boot-cursor {
-  display: inline-block;
-  width: 0.7em;
-  height: 1em;
-  margin-left: 0.25em;
-  vertical-align: -0.15em;
-  background: currentColor;
-  opacity: 0;
-}
-
-body.boot-start .boot-cursor {
-  animation: osaiBootCursor 5.41s steps(1, end) forwards;
-}
-
-@keyframes osaiBootBackground {
-  0% {
-    background: #ffffff;
-  }
-
-  10% {
-    background: #000541;
-  }
-
-  90% {
-    background: #000541;
-  }
-
-  100% {
-    background: radial-gradient(circle at center, #02063A 0%, #000541 70%);
-  }
-}
-
-@keyframes osaiBootLayout {
-  0%, 80% {
-    text-align: left;
-    transform: translate(-34vw, -28vh);
-  }
-
-  90% {
-    text-align: left;
-    transform: translate(-34vw, -28vh);
-  }
-
-  100% {
-    text-align: center;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes osaiBootText {
-  0% {
-    opacity: 0;
-    color: #ffffff;
-  }
-
-  10% {
-    opacity: 1;
-    color: #ffffff;
-  }
-
-  80% {
-    opacity: 1;
-    color: #ffffff;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes osaiBootCursor {
-  0%, 79% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  83% {
-    opacity: 0;
-  }
-
-  86% {
-    opacity: 1;
-  }
-
-  89% {
-    opacity: 0;
-  }
-
-  92% {
-    opacity: 1;
-  }
-
-  95%, 100% {
-    opacity: 0;
-  }
-}
-
-body.boot-done .boot-cursor {
-  display: none;
-}
-
-/* ========================= */
-/* OSAI DOT (Impuls → Manifestation) */
-/* ========================= */
-
-.osai-dot {
-  display: inline-block;
-  color: #ffffff;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: color 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* erscheint am Ende der Boot-Animation */
-body.boot-start .osai-dot {
-  animation: osaiDot 5.41s ease forwards;
-}
-
-@keyframes osaiDot {
-
-  /* komplett unsichtbar */
-  0%, 90% {
-    opacity: 0;
-    color: #ffffff;
-    transform: translateY(4px);
-  }
-
-  /* erscheint */
-  95% {
-    opacity: 1;
-    color: #ffffff;
-    transform: translateY(0);
-  }
-
-  /* finaler Zustand → deine Farbe */
-  100% {
-    opacity: 1;
-    color: #A0541B;
-    transform: translateY(0);
-  }
-}
+.link-grid a:hover,
+.backlink:hover { border-color: var(--gold); }
